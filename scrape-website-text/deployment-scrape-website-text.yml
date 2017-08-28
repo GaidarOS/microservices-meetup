@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: scrape-website-text
+  name: scrape-website-text
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: scrape-website-text
+  template:
+    metadata:
+      labels:
+        run: scrape-website-text
+    spec:
+      containers:
+      - image: sharor/scrape-website-text
+        imagePullPolicy: Always
+        name: scrape-website-text
