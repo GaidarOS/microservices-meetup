@@ -10,5 +10,5 @@ RUN apk --update add --virtual build-dependencies py-pip \
 COPY src /code
 WORKDIR /code
 
-EXPOSE 5000
+EXPOSE 6000
 ENTRYPOINT ["python", "app.py"]

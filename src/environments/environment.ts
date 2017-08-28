@@ -4,9 +4,5 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false,
-  endpointScrape: 'http://localhost:6000',
-  endpointEncoder: 'http://localhost:3456',
-  endpointCounter: 'http://scrape-website-text.default.svc.cluster.local:5000',
-  endpointDatabase: 'http://localhost:8080'
+  production: false
 };

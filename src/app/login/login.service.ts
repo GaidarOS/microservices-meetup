@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Word } from '../models/word.model';
-import { Http,Response} from '@angular/http'
-import 'rxjs/add/operator/map';
+import { Http,Response} from '@angular/http';
 
 @Injectable()
-export class LoginService {return
+export class LoginService {
 
   constructor(private http: Http) { }
 
@@ -31,7 +30,7 @@ export class LoginService {return
 
 	public insertToDb(word: Word){
 		var words=JSON.stringify(word)	// listFromDb(): void{	// listFromDb(): void{
-		var path ="http://localhost:8080/insert"+"/"+words
+		var path ="http://localhost:8080/greeting"  //"http://localhost:8080/insert"+"/"+words
 		this.communicate("POST",path,false)
 	}
 
@@ -44,9 +43,6 @@ export class LoginService {return
 		var wordJson=JSON.stringify(word)	// listFromDb(): void{	// listFromDb(): void{
 		var path ="http://localhost:8080/delete/"+wordJson
 		var result = this.communicate("POST",path,false)
-		if (result){
-
-		}
 	}
 
 	listFromDb(){
