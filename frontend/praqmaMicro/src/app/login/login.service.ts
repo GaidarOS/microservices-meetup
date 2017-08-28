@@ -3,13 +3,15 @@ import { Word } from '../models/word.model';
 import { Http,Response} from '@angular/http'
 import 'rxjs/add/operator/map';
 
+import { environment } from '../../environments/environment';
+
 @Injectable()
 export class LoginService {return
 
   constructor(private http: Http) { }
 
 	getTextFromWebsite(url: string): Promise<string>{
-		var path = "http://localhost:5000/"+"?link=http://www."+url
+		var path = environment.endpointScrape+"/?link=http://www."+url
 		return Promise.resolve(this.communicate("GET",path,true))
 	}
 
@@ -24,14 +26,14 @@ export class LoginService {return
 		else return false
 	}
 
-	getWordCount(text: string): Promise<string>{
-
-		return Promise.resolve("22")
+	getWordCount(word: string,text: string): Promise<string>{
+		var path = environment.endpointCounter+"/?word="+word+"&text="+text
+		return Promise.resolve(this.communicate("GET",path,true))
 	}
 
 	public insertToDb(word: Word){
 		var words=JSON.stringify(word)	// listFromDb(): void{	// listFromDb(): void{
-		var path ="http://localhost:8080/insert"+"/"+words
+		var path =environment.endpointDatabase+"/insert/"+words
 		this.communicate("POST",path,false)
 	}
 
@@ -42,7 +44,7 @@ export class LoginService {return
 
 	deleteFromDb(word: Word){
 		var wordJson=JSON.stringify(word)	// listFromDb(): void{	// listFromDb(): void{
-		var path ="http://localhost:8080/delete/"+wordJson
+		var path =environment.endpointDatabase+"/delete/"+wordJson
 		var result = this.communicate("POST",path,false)
 		if (result){
 
@@ -50,20 +52,20 @@ export class LoginService {return
 	}
 
 	listFromDb(){
-		var path : string="http://localhost:8080/list"
+		var path : string=environment.endpointDatabase+"/list"
 		var response = JSON.parse(this.communicate("POST",path,true));
 	}
 	
 
 	encodeString(toEncode: Word, key: string): Promise<Word>{
-		var path ="http://localhost:3456/encode/"
+		var path =environment.endpointEncoder+"/encode/"
 		var pathAndInfo=path+toEncode.word+"/"+key
 		var response:Word = JSON.parse(this.communicate("POST",pathAndInfo,true))
 		return Promise.resolve(response)
 	}
 
 	decodeString(toEncode: Word, key: string): Promise<Word>{
-		var path ="http://localhost:3456/decode/"
+		var path =environment.endpointEncoder+"/decode/"
 		var pathAndInfo=path+toEncode.encoded+"/"+key
 		var response:Word = JSON.parse(this.communicate("POST",pathAndInfo,true))
 		return Promise.resolve(response)
