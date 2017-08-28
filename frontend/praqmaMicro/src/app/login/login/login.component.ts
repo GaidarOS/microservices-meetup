@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Message} from 'primeng/primeng';
 import {LoginService} from '../login.service'
 import {Word} from '../../models/word.model'
+import { environment } from '../../../environments/environment';
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
 
 
 	getText(){
-		
+		console.log(environment.endpointCounter)
 		this.getDataFromMicros.getTextFromWebsite(this.websiteURL).then((result: string)=>{
 			if (result !== ""){
 				this.returnedText=result
