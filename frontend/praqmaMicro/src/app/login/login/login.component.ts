@@ -111,4 +111,3 @@ export class LoginComponent implements OnInit {
 		this.wordToSearch=this.wordToSearch
 	}
 }
-
