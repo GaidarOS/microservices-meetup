@@ -2,20 +2,20 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    run: scraper
-  name: scraper
+    run: frontend
+  name: frontend
   namespace: default
 spec:
   replicas: 2
   selector:
     matchLabels:
-      run: scraper
+      run: frontend
   template:
     metadata:
       labels:
-        run: scraper
+        run: frontend
     spec:
       containers:
-      - image: sharor/scrape-website-text:1.0.0
+      - image: sharor/meetupfrontend
         imagePullPolicy: Always
-        name: scraper
+        name: frontend

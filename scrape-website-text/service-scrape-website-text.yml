@@ -2,13 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    run: scrape-website-text
-  name: scrape-website-text
+    run: scraper
+  name: scraper
   namespace: default
 spec:
   ports:
   - port: 6100
     targetPort: 6100
   selector:
-    run: scrape-website-text
+    run: scraper
   sessionAffinity: None
