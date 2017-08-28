@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
 
 	getText(){
-		console.log(environment.endpointCounter)
+		console.log(environment.endpointScrape)
 		this.getDataFromMicros.getTextFromWebsite(this.websiteURL).then((result: string)=>{
 			if (result !== ""){
 				this.returnedText=result

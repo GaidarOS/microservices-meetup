@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
-  endpointScrape: 'http://scrape-website-text.default.svc.cluster.local:5000',
-  endpointEncoder: 'http://scrape-website-text.default.svc.cluster.local:5000',
-  endpointCounter: 'http://scrape-website-text.default.svc.cluster.local:5000',
-  endpointDatabase: 'http://scrape-website-text.default.svc.cluster.local:5000'
+  endpointScrape: 'http://scraper.production.svc.cluster.local:6000',
+  endpointEncoder: 'http://encoder.production.svc.cluster.local:3456',
+  endpointCounter: 'http://wordcounter.production.svc.cluster.local:5000',
+  endpointDatabase: 'http://database.production.svc.cluster.local:8080'
 };
