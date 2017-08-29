@@ -6,7 +6,7 @@ build:
 	sudo chown -R -v $(USER) ./src/out
 
 upload:
-  # bash createDockerfile.sh
+  	bash createDockerfile.sh
 	docker build --no-cache -t alpap/$(NAME):$(VERSION) .
 	docker push alpap/$(NAME):$(VERSION)
 
