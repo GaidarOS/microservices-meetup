@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: scraper
+  name: scraper
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: scraper
+  template:
+    metadata:
+      labels:
+        run: scraper
+    spec:
+      containers:
+      - image: sharor/scraper:1.0.0
+        imagePullPolicy: Always
+        name: scraper
