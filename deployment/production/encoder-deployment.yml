@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: encoder
+  name: encoder
+  namespace: production
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: encoder
+  template:
+    metadata:
+      labels:
+        run: encoder
+    spec:
+      containers:
+      - image: sharor/encoder:1.0.1
+        imagePullPolicy: Always
+        name: encoder

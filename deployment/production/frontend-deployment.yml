@@ -4,7 +4,7 @@ metadata:
   labels:
     run: frontend
   name: frontend
-  namespace: default
+  namespace: production
 spec:
   replicas: 2
   selector:
@@ -21,4 +21,4 @@ spec:
         name: frontend
         env:
         - name: angularmode
-          value: test
+          value: prod

@@ -2,23 +2,23 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   labels:
-    run: frontend
-  name: frontend
-  namespace: default
+    run: arangodb
+  name: arangodb
+  namespace: production
 spec:
   replicas: 2
   selector:
     matchLabels:
-      run: frontend
+      run: arangodb
   template:
     metadata:
       labels:
-        run: frontend
+        run: arangodb
     spec:
       containers:
-      - image: sharor/angular-meetup:1.1.0
+      - image: arangodb/arangodb:3.2.2
         imagePullPolicy: Always
-        name: frontend
+        name: arangodb
         env:
-        - name: angularmode
-          value: test
+        - name: ARANGO_ROOT_PASSWORD
+          value: pass

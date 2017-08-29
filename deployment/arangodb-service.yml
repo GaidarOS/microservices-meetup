@@ -2,13 +2,13 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    run: frontend
-  name: frontend
+    run: arangodb
+  name: arangodb
   namespace: default
 spec:
   ports:
-  - port: 4200
-    targetPort: 4200
+  - port: 8529
+    targetPort: 8529
   selector:
-    run: frontend
+    run: arangodb
   sessionAffinity: ClientIP

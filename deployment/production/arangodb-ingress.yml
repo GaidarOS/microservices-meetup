@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: arangodb
+  namespace: production
+spec:
+  rules:
+  - host: production.arangodb.org
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: arangodb
+          servicePort: 8529
+
+
