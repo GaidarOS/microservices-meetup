@@ -9550,14 +9550,17 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/alp/Source/cSharp/WebApplication/WebApplication/WebApplication.csproj",
+      "projectUniqueName": "/home/alp/Source/microservices-meetup/wordcounter/WebApplication/WebApplication/WebApplication.csproj",
       "projectName": "WebApplication",
-      "projectPath": "/home/alp/Source/cSharp/WebApplication/WebApplication/WebApplication.csproj",
-      "outputPath": "/home/alp/Source/cSharp/WebApplication/WebApplication/obj/",
+      "projectPath": "/home/alp/Source/microservices-meetup/wordcounter/WebApplication/WebApplication/WebApplication.csproj",
+      "outputPath": "/home/alp/Source/microservices-meetup/wordcounter/WebApplication/WebApplication/obj/",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
       ],
+      "files": {
+        "lib/netcoreapp1.1/WebApplication.dll": "/home/alp/Source/microservices-meetup/wordcounter/WebApplication/WebApplication/bin/placeholder/netcoreapp1.1/WebApplication.dll"
+      },
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {}

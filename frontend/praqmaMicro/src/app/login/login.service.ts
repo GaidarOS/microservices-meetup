@@ -18,7 +18,8 @@ export class LoginService {return
 	communicate(method :string,path: string, getResponseText: boolean ): any {
 		var xhttp = new XMLHttpRequest();
 		xhttp.open(method,path , false);
-		xhttp.setRequestHeader("Content-type", "application/json;text/plain;charset=UTF-8");
+		xhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+		xhttp.setRequestHeader("Accept","*/*")
 		xhttp.send();
 		var header =xhttp.status
 		if (getResponseText)return xhttp.responseText
@@ -32,18 +33,13 @@ export class LoginService {return
 	}
 
 	public insertToDb(word: Word){
-		var words=JSON.stringify(word)	// listFromDb(): void{	// listFromDb(): void{
-		var path =environment.endpointDatabase+"/insert/"+words
+		var words=JSON.stringify(word)
+		var path =environment.endpointDatabase+"/insert/?data="+words
 		this.communicate("POST",path,false)
 	}
 
-	protected static handleError(error: any): Promise<void> {
-		console.error("An error occurred", error)
-		return Promise.reject(error.message || error)
-	}
-
 	deleteFromDb(word: Word){
-		var wordJson=JSON.stringify(word)	// listFromDb(): void{	// listFromDb(): void{
+		var wordJson=JSON.stringify(word)	
 		var path =environment.endpointDatabase+"/delete/"+wordJson
 		var result = this.communicate("POST",path,false)
 		if (result){
@@ -51,9 +47,10 @@ export class LoginService {return
 		}
 	}
 
-	listFromDb(){
+	listFromDb() : string{
 		var path : string=environment.endpointDatabase+"/list"
-		var response = JSON.parse(this.communicate("POST",path,true));
+		var response = JSON.stringify(this.communicate("GET",path,true));
+		return response
 	}
 	
 
@@ -70,10 +67,5 @@ export class LoginService {return
 		var response:Word = JSON.parse(this.communicate("POST",pathAndInfo,true))
 		return Promise.resolve(response)
 	}
-
-	// getFromDb(word: Word): Promise<Whttp://localhost:8080/listord>{
-	// 	return Promise.resolve(new Word)http://localhost:8080/list
-	// }
-
 
 }

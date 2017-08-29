@@ -6,3 +6,11 @@
 /home/alp/Source/cSharp/WebApplication/WebApplication/obj/Debug/netcoreapp1.1/WebApplication.AssemblyInfo.cs
 /home/alp/Source/cSharp/WebApplication/WebApplication/obj/Debug/netcoreapp1.1/WebApplication.dll
 /home/alp/Source/cSharp/WebApplication/WebApplication/obj/Debug/netcoreapp1.1/WebApplication.pdb
+/home/alp/Source/microservices-meetup/wordcounter/WebApplication/WebApplication/bin/Debug/netcoreapp1.1/WebApplication.deps.json
+/home/alp/Source/microservices-meetup/wordcounter/WebApplication/WebApplication/bin/Debug/netcoreapp1.1/WebApplication.runtimeconfig.json
+/home/alp/Source/microservices-meetup/wordcounter/WebApplication/WebApplication/bin/Debug/netcoreapp1.1/WebApplication.runtimeconfig.dev.json
+/home/alp/Source/microservices-meetup/wordcounter/WebApplication/WebApplication/bin/Debug/netcoreapp1.1/WebApplication.dll
+/home/alp/Source/microservices-meetup/wordcounter/WebApplication/WebApplication/bin/Debug/netcoreapp1.1/WebApplication.pdb
+/home/alp/Source/microservices-meetup/wordcounter/WebApplication/WebApplication/obj/Debug/netcoreapp1.1/WebApplication.AssemblyInfo.cs
+/home/alp/Source/microservices-meetup/wordcounter/WebApplication/WebApplication/obj/Debug/netcoreapp1.1/WebApplication.dll
+/home/alp/Source/microservices-meetup/wordcounter/WebApplication/WebApplication/obj/Debug/netcoreapp1.1/WebApplication.pdb

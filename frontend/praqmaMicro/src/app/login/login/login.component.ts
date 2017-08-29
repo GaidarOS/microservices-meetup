@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
 	WordCountButton: string;
 	encodeKey: string;
 	encodedString: string;
+	listFromDb: string;
   logo = '../assets/logo3.png'
 	visible: boolean;
 	visibleTwo: boolean;
@@ -27,8 +28,6 @@ export class LoginComponent implements OnInit {
 		this.WordCountButton="Search not ran yet"
 		this.word={word:"",count:"",encoded:""}
   }
-
-
 
 	getText(){
 		this.getDataFromMicros.getTextFromWebsite(this.websiteURL).then((result: string)=>{
@@ -67,7 +66,7 @@ export class LoginComponent implements OnInit {
 				this.encodedString=result.encoded
 				this.word.encoded=result.encoded
 				this.showOk()
-				this.insertToDb()
+				this.getDataFromMicros.insertToDb(this.word)
 				this.update()
 			}else{
 				this.showNotOk()
@@ -76,11 +75,19 @@ export class LoginComponent implements OnInit {
 		
 	}
 
-	onchange
-
 	getListFromDb(){
-		this.getDataFromMicros.listFromDb()
-		this.showOk()
+		var sss ={} as Word
+		sss.count="22"
+		sss.encoded="asdasd"
+		sss.word=		this.wordToSearch
+		this.getDataFromMicros.insertToDb(sss)
+		var result: string=this.getDataFromMicros.listFromDb()
+		if (result){	
+			this.listFromDb=result
+			this.showOk()
+		}else{
+			this.showNotOk()
+		}
 	}
 
 	showDialog(){
@@ -99,10 +106,6 @@ export class LoginComponent implements OnInit {
 
 	showNotOk() {
 		this.msgs.push({severity:'error', summary:'Error Message',detail:'Action Failed'});
-	}
-
-	insertToDb(){
-		this.getDataFromMicros.insertToDb(this.word)
 	}
 
 	update(){

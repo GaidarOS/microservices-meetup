@@ -18,6 +18,7 @@ public class Microservice {
     private DbAccessor db =new DbAccessor();
     private Gson gson = new Gson();
 
+
     @PostMapping("/")
 	public String home() {
 		return "The system is up and running";
@@ -30,7 +31,6 @@ public class Microservice {
 
 	@GetMapping(value = "/list")
     public String list() { return gson.toJson(db.List()); }
-
 
     @DeleteMapping(value = "/delete",produces = APPLICATION_JSON_VALUE)
     public String delete(@RequestBody WordModel data) {
@@ -55,7 +55,10 @@ public class Microservice {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("*");
+                registry.addMapping("/**")
+                        .allowedOrigins("*")
+                        .allowedHeaders("Access-Control-Allow-Headers","Content-Type","X-Requested-With,accept","Origin","Access-Control-Request-Method","Access-Control-Request-Headers")
+                        .exposedHeaders("Access-Control-Allow-Origin","Access-Control-Allow-Credentials","Access-Control-Allow-Headers");
             }
         };
     }
