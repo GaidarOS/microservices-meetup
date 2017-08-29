@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: arangodb
+  name: arangodb
+  namespace: default
+spec:
+  ports:
+  - port: 8529
+    targetPort: 8529
+  selector:
+    run: arangodb
+  sessionAffinity: ClientIP

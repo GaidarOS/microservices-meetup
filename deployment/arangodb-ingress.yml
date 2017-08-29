@@ -1,16 +1,15 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: encoder
-  namespace: production
+  name: arangodb
 spec:
   rules:
-  - host: encoder.org
+  - host: test.arangodb.org
     http:
       paths:
       - path: /
         backend:
-          serviceName: encoder
-          servicePort: 3456
+          serviceName: arangodb
+          servicePort: 8529
 
 
