@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   logo = '../assets/logo3.png'
 	visible: boolean;
 	visibleTwo: boolean;
-	visibleThree: boolean;
 	constructor(private getDataFromMicros: LoginService) { }
 		
   ngOnInit() {
@@ -66,7 +65,6 @@ export class LoginComponent implements OnInit {
 				this.encodedString=result.encoded
 				this.word.encoded=result.encoded
 				this.showOk()
-				this.getDataFromMicros.insertToDb(this.word)
 				this.update()
 			}else{
 				this.showNotOk()
@@ -75,29 +73,11 @@ export class LoginComponent implements OnInit {
 		
 	}
 
-	getListFromDb(){
-		var sss ={} as Word
-		sss.count="22"
-		sss.encoded="asdasd"
-		sss.word=		this.wordToSearch
-		this.getDataFromMicros.insertToDb(sss)
-		var result: string=this.getDataFromMicros.listFromDb()
-		if (result){	
-			this.listFromDb=result
-			this.showOk()
-		}else{
-			this.showNotOk()
-		}
-	}
-
 	showDialog(){
 		this.visible=true
 	}
 	showDialogtwo(){
 		this.visibleTwo=true
-	}
-	showDialogthree(){
-		this.visibleThree=true
 	}
 
 	showOk(){

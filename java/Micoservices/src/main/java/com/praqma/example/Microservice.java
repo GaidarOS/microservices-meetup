@@ -1,6 +1,7 @@
 package com.praqma.example;
 
 import com.google.gson.Gson;
+import com.sun.xml.internal.ws.server.sei.EndpointArgumentsBuilder;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.context.annotation.Bean;
@@ -56,9 +57,7 @@ public class Microservice {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("*")
-                        .allowedHeaders("Access-Control-Allow-Headers","Content-Type","X-Requested-With,accept","Origin","Access-Control-Request-Method","Access-Control-Request-Headers")
-                        .exposedHeaders("Access-Control-Allow-Origin","Access-Control-Allow-Credentials","Access-Control-Allow-Headers");
+                        .allowedOrigins("*");
             }
         };
     }
