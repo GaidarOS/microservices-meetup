@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  endpointScrape: 'http://localhost:6000',
+  endpointScrape: 'http://localhost:6100',
   endpointEncoder: 'http://localhost:3456',
   endpointCounter: 'http://localhost:5000',
   endpointDatabase: 'http://localhost:8080'
