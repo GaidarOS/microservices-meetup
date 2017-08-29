@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: encoder
+spec:
+  rules:
+  - host: encoder.org
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: encoder
+          servicePort: 3456
+
+

@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: wordcounter
+spec:
+  rules:
+  - host: test.wordcounter.org
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: wordcounter
+          servicePort: 5000
+
+
