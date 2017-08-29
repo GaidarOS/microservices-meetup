@@ -6,6 +6,8 @@ apk update
 apk add git
 
 go get -u github.com/gorilla/mux
+go get -u github.com/gorilla/handlers
+
 CGO_ENABLED=0 GOOS=linux GOARCH=amd64 
 # go test run ''
 go build main.go

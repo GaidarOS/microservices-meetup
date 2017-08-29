@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: encoder
+  name: encoder
+  namespace: default
+spec:
+  ports:
+  - port: 3456
+    targetPort: 3456
+  selector:
+    run: encoder
+  sessionAffinity: ClientIP

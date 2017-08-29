@@ -18,8 +18,7 @@ export class LoginService {return
 	communicate(method :string,path: string, getResponseText: boolean ): any {
 		var xhttp = new XMLHttpRequest();
 		xhttp.open(method,path , false);
-		xhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
-		xhttp.setRequestHeader("Accept","*/*")
+		xhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");		
 		xhttp.send();
 		var header =xhttp.status
 		if (getResponseText)return xhttp.responseText
